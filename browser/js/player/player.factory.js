@@ -64,6 +64,18 @@ juke.factory('PlayerFactory', function ($rootScope) {
     return progress;
   };
 
+  player.setProgress = function (_progress) {
+    progress = _progress;
+  };
+
+  player.getDuration = function() {
+    return audio.duration;
+  };
+
+  player.setCurrentTime = function(time) {
+    audio.currentTime = time;
+  };
+
   // audio event listening
 
   audio.addEventListener('ended', function () {
@@ -75,6 +87,7 @@ juke.factory('PlayerFactory', function ($rootScope) {
     progress = audio.currentTime / audio.duration;
     $rootScope.$evalAsync();
   });
+
 
   // return factory value
 

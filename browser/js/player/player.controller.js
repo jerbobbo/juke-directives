@@ -9,8 +9,4 @@ juke.controller('PlayerCtrl', function ($scope, $rootScope, PlayerFactory) {
     else PlayerFactory.resume();
   };
 
-  $scope.getPercent = function () {
-    return PlayerFactory.getProgress() * 100;
-  };
-
 });
