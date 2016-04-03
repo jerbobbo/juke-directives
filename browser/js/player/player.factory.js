@@ -72,8 +72,8 @@ juke.factory('PlayerFactory', function ($rootScope) {
     return audio.duration;
   };
 
-  player.setCurrentTime = function(time) {
-    audio.currentTime = time;
+  player.setCurrentTime = function() {
+    audio.currentTime = progress * audio.duration;
   };
 
   // audio event listening
